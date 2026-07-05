@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Design tokens — single source of truth.
+  Values are space-separated RGB triplets so Tailwind opacity
+  modifiers (e.g. bg-surface/50) keep working via
+  rgb(var(--token) / <alpha-value>) in tailwind.config.js.
+
+  v4: energetic competitive arena — graphite surfaces, luminous BU red,
+  technical textures and high-contrast data colours.
+*/
+:root {
+  --bg: 6 6 8;
+  --surface: 13 13 16;
+  --surface-raised: 20 20 24;
+  --border: 39 39 46;
+  --border-strong: 68 68 78;
+  --fg: 250 250 250;
+  --fg-secondary: 211 211 218;
+  --fg-muted: 139 139 151;
+  --accent: 255 45 78;
+  --accent-solid: 226 24 58;
+  --accent-hover: 248 35 70;
+  --header-bg: 18 18 22;
+  --header-fg: 244 244 245;
+  --easy: 44 211 164;
+  --medium: 251 180 65;
+  --hard: 255 83 127;
+  --gold: 255 204 77;
+  --silver: 180 190 204;
+  --bronze: 234 139 72;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--fg-secondary));
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(circle at 75% -10%, rgb(var(--accent-solid) / 0.14), transparent 30rem),
+    radial-gradient(circle at -10% 35%, rgb(var(--accent-solid) / 0.06), transparent 24rem);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgb(var(--accent-solid) / 0.25);
+  color: rgb(var(--fg));
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(var(--surface));
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--border-strong));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--fg-muted));
+}
+
+@layer components {
+  .focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-accent/70 focus-visible:ring-offset-2 focus-visible:ring-offset-bg;
+  }
+
+  .arena-grid {
+    background-image:
+      linear-gradient(rgb(255 255 255 / 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 0.025) 1px, transparent 1px);
+    background-size: 42px 42px;
+  }
+
+  .glass-panel {
+    @apply border border-border bg-surface/80 backdrop-blur-xl;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[10px] font-semibold uppercase tracking-[0.24em] text-accent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
