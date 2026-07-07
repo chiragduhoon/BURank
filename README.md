@@ -8,7 +8,9 @@
 
 Track competitive programming progress, compare batches, discover top performers, and foster healthy coding competition — all in one place.
 
-[Report Bug](https://github.com/chiragduhoon/BURank/issues) • [Request Feature](https://github.com/chiragduhoon/BURank/issues)
+**[🌐 Live Demo — bu-rank-three.vercel.app](https://bu-rank-three.vercel.app)**
+
+[Live Demo](https://bu-rank-three.vercel.app) • [Report Bug](https://github.com/chiragduhoon/BURank/issues) • [Request Feature](https://github.com/chiragduhoon/BURank/issues)
 
 </div>
 
@@ -135,6 +137,16 @@ magic link appears directly on the sign-in page. Add `GMAIL_USER` +
                         ▼
                      Vercel
 ```
+
+---
+
+## Contributing
+
+Contributions are welcome — see [CONTRIBUTING.md](./CONTRIBUTING.md) to get
+started. Issues labeled
+[`good first issue`](https://github.com/chiragduhoon/BURank/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+are a great entry point. Want BURank for your own university? That's a
+contribution we'd especially love.
 
 ---
 
